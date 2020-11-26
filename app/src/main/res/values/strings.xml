@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BaseApplication</string>
+    <string name="app_name">Sistem Arsip</string>
     <string name="base_application">Base Application</string>
 
     <string name="text_all_right_reserved">Ahlan Wa Sahlan</string>
@@ -121,4 +121,8 @@
     <string name="menu_setting">Setting</string>
     <string name="main_activity">Main Activity</string>
     <string name="authentication">Authentication</string>
+    <string name="download">Download</string>
+    <string name="title">Title</string>
+    <string name="cari_berkas">Cari Berkas</string>
+    <string name="detail_berkas">Detail Berkas</string>
 </resources>
