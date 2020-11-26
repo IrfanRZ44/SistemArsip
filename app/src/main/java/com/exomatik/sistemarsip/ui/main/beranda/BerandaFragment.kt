@@ -5,6 +5,7 @@ import android.widget.TextView
 import com.exomatik.sistemarsip.R
 import com.exomatik.sistemarsip.base.BaseFragmentBind
 import com.exomatik.sistemarsip.databinding.FragmentBerandaBinding
+import kotlinx.android.synthetic.main.fragment_beranda.*
 
 class BerandaFragment : BaseFragmentBind<FragmentBerandaBinding>() {
     private lateinit var viewModel: BerandaViewModel
@@ -21,7 +22,7 @@ class BerandaFragment : BaseFragmentBind<FragmentBerandaBinding>() {
         bind.viewModel = viewModel
         viewModel.initAdapter()
         viewModel.getData()
-
+        bind.swipeRefresh.isRefreshing = false
         onClick()
     }
 
@@ -33,6 +34,11 @@ class BerandaFragment : BaseFragmentBind<FragmentBerandaBinding>() {
             }
             false
         })
+
+        bind.swipeRefresh.setOnRefreshListener {
+            viewModel.getData()
+            swipeRefresh.isRefreshing = false
+        }
     }
 }
 

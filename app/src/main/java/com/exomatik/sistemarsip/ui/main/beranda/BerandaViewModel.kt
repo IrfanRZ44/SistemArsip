@@ -11,7 +11,6 @@ import com.exomatik.sistemarsip.model.ModelDaftarBerkas
 import com.exomatik.sistemarsip.utils.Constant.noData
 import com.exomatik.sistemarsip.utils.DetailPDFActivity
 import com.exomatik.sistemarsip.utils.RetrofitUtils
-import com.exomatik.sistemarsip.utils.showLog
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,7 +31,6 @@ class BerandaViewModel(
         )
         rcData.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rcData.adapter = adapter
-        rcData.isNestedScrollingEnabled = false
     }
 
     fun cekList() {
@@ -43,7 +41,9 @@ class BerandaViewModel(
     }
 
     fun getData(){
+        isShowLoading.value = true
         listData.clear()
+
         RetrofitUtils.getDaftarBerkas(
             object : Callback<ModelDaftarBerkas> {
                 override fun onResponse(
@@ -77,6 +77,8 @@ class BerandaViewModel(
 
     fun searchData(search: String){
         listData.clear()
+        isShowLoading.value = true
+
         RetrofitUtils.searchDataBerkas(search,
             object : Callback<ModelDaftarBerkas> {
                 override fun onResponse(

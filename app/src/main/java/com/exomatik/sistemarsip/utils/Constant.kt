@@ -34,7 +34,7 @@ object Constant {
     const val codeRequestResultCrop = 400
 
     const val defaultTempFoto = "https://www.google.co.id/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"
-    const val defaultBaseUrl = "http://192.168.1.102/sistem_arsip/"
+    const val defaultBaseUrl = "https://devportation.com/api_sistemarsip/"
     const val timeFormat = "HH:mm"
     const val dateFormat1 = "dd-M-yyyy"
     const val dateFormat2 = "dd-MMM-yyyy"
